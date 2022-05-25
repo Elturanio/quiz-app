@@ -1,0 +1,26 @@
+.register-component {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   background: rgb(2, 0, 36);
+   background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(104, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
+}
+
+.register-header {
+   padding: 20px;
+}
+
+.register-login-input-div {
+   padding: 10px 0;
+}
+
+.register-password-input-div {
+   padding: 10px 0;
+}
+
+.register-submit-button-div {
+   display: flex;
+   justify-content: center;
+}
