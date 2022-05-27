@@ -1,0 +1,16 @@
+.main-component {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+   height: 100vh;
+   background-image: linear-gradient(102.4deg, rgba(253, 189, 85, 1) 7.8%, rgba(249, 131, 255, 1) 100.3%);
+}
+
+
+/* for other pages: 
+background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(43, 199, 188, 1) 0%, rgba(219, 249, 203, 1) 72.9%);
+background-image: radial-gradient(circle farthest-corner at 32.7% 82.7%, rgba(173, 0, 171, 1) 8.3%, rgba(15, 51, 92, 1) 79.4%);
+background-image: linear-gradient(180.6deg, rgba(141, 123, 228, 1) -21.6%, rgba(147, 137, 246, 1) -0.6%, rgba(83, 75, 197, 1) 27.9%, rgba(54, 44, 165, 1) 60.1%, rgba(39, 25, 78, 1) 93.9%);
+
+*/
