@@ -1,3 +1,4 @@
+import Constructor from "./Constructor";
 import Main from "./Main";
 import Quiz from "./Quiz";
 import QuizList from "./QuizList";
@@ -9,7 +10,8 @@ function App() {
       {/* <Register />
       <Main />
       <QuizList /> */}
-      <Quiz />
+      {/* <Quiz /> */}
+      <Constructor />
     </div>
   );
 }
