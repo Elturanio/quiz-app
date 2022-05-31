@@ -18,3 +18,13 @@
 .quiz-btn {
    margin-top: 10px;
 }
+
+.quiz-bottom {
+   display: flex;
+   justify-content: space-between;
+}
+
+.quiz-component-counter {
+   display: flex;
+   align-items: flex-end;
+}

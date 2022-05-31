@@ -1,18 +1,15 @@
-import Constructor from "./Constructor";
-import Main from "./Main";
-import Quiz from "./Quiz";
-import QuizList from "./QuizList";
-import Register from "./Register";
+import { Routes, Route } from "react-router-dom";
+import { routes } from "../routes";
 
 function App() {
   return (
-    <div className="app">
-      {/* <Register />
-      <Main />
-      <QuizList /> */}
-      {/* <Quiz /> */}
-      <Constructor />
-    </div>
+    <Routes>
+      <Route path={routes.register.url} element={routes.register.component} />
+      <Route path={routes.main.url} element={routes.main.component} />
+      <Route path={routes.quizes.url} element={routes.quizes.component} />
+      <Route path={routes.constructor.url} element={routes.constructor.component} />
+      <Route path={routes.quiz.url} element={routes.quiz.component} />
+    </Routes>
   );
 }
 

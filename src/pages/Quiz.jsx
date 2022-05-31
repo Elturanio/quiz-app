@@ -26,7 +26,12 @@ const Quiz = () => {
                      </li>
                   </ul>
                </div>
-               <button href="#" className="btn btn-primary text-center quiz-btn">Next question</button>
+               <div className="quiz-bottom">
+                  <div className="quiz-component-counter">
+                     <h4>Question 1 of 13</h4>
+                  </div>
+                  <button href="#" className="btn btn-primary text-center quiz-btn">Next question</button>
+               </div>
             </div>
          </div>
       </div>

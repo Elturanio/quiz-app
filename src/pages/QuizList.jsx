@@ -1,5 +1,5 @@
 import "../styles/QuizList.css"
-import QuizCard from "./QuizCard"
+import QuizCard from "../components/QuizCard"
 
 const QuizList = () => {
    return (
