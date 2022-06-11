@@ -10,7 +10,7 @@ export const routes = {
       component: <Register />
    },
    main: {
-      url: "main",
+      url: "/",
       component: <Main />
    },
    quizes: {

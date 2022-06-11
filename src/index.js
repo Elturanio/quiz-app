@@ -10,6 +10,7 @@ import store from './redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import "./firebase"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
