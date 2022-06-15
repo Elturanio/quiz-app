@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../styles/QuizCard.css"
 const QuizCard = () => {
    return (
@@ -6,7 +7,7 @@ const QuizCard = () => {
          <div className="card-body">
             <h5 className="card-title">Who is the best boxer in the UFC?</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. lore</p>
-            <button className="btn btn-primary">Try to beat</button>
+            <Link to={"/quiz"} className="btn btn-primary">Try to beat</Link>
          </div>
       </div>
 

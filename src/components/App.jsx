@@ -1,9 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux"
 import { routes } from "../routes";
+import { useEffect } from "react";
+
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+
 
 
 function App() {
+
   const user = useSelector(state => state.user.isRegisted)
   return (
     <Routes>
