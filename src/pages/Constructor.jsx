@@ -1,10 +1,12 @@
 import { useState } from "react"
 import "../styles/Constructor.css"
 
-import { doc, setDoc, getDoc } from "firebase/firestore"
-import { firestore } from "../firebase"
+import { doc, setDoc } from "firebase/firestore"
+import { db } from "../firebase";
+import { useNavigate } from "react-router-dom"
 
 const Constructor = () => {
+
 
    const [title, setTitle] = useState("")
    const [question, setQuestion] = useState("")
@@ -16,6 +18,8 @@ const Constructor = () => {
    const [box2, setBox2] = useState(false)
    const [box3, setBox3] = useState(false)
    const [box4, setBox4] = useState(false)
+
+   const navigate = useNavigate()
 
 
 
@@ -40,9 +44,10 @@ const Constructor = () => {
             question,
             answers: [{ answer1, box1 }, { answer2, box2 }, { answer3, box3 }, { answer4, box4 }]
          }
-         const path = doc(firestore, `quiz-collection/try1`)
+         const path = doc(db, `quiz-collection/${data.title}`)
          setDoc(path, data)
          defaultEverythng()
+         navigate("/")
 
       } else console.log("you forgor to fill another inputs")
       console.table([title, question, answer1, answer2, answer3, answer4])
@@ -64,13 +69,13 @@ const Constructor = () => {
                <div>
                   <div className="input-group mb-3">
                      <div className="input-group-text">
-                        <input checked={box1} onClick={(e) => { checkboxHandler(e, setBox1) }} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
+                        <input onChange={(e) => { checkboxHandler(e, setBox1) }} checked={box1} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
                      </div>
                      <input type="text" value={answer1} onChange={(e) => inputHandler(e, setAnswer1)} className="form-control" aria-label="Text input with checkbox" />
                   </div>
                   <div className="input-group mb-3">
                      <div className="input-group-text">
-                        <input checked={box2} onClick={(e) => { checkboxHandler(e, setBox2) }} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
+                        <input onChange={(e) => { checkboxHandler(e, setBox2) }} checked={box2} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
                      </div>
                      <input type="text" value={answer2} onChange={(e) => inputHandler(e, setAnswer2)} className="form-control" aria-label="Text input with checkbox" />
                   </div>
@@ -78,13 +83,13 @@ const Constructor = () => {
                <div>
                   <div className="input-group mb-3">
                      <div className="input-group-text">
-                        <input checked={box3} onClick={(e) => { checkboxHandler(e, setBox3) }} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
+                        <input onChange={(e) => { checkboxHandler(e, setBox3) }} checked={box3} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
                      </div>
                      <input type="text" value={answer3} onChange={(e) => inputHandler(e, setAnswer3)} className="form-control" aria-label="Text input with checkbox" />
                   </div>
                   <div className="input-group mb-3">
                      <div className="input-group-text">
-                        <input checked={box4} onClick={(e) => { checkboxHandler(e, setBox4) }} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
+                        <input onChange={(e) => { checkboxHandler(e, setBox4) }} checked={box4} className="form-check-input mt-0" type="checkbox" defaultValue aria-label="Checkbox for following text input" />
                      </div>
                      <input type="text" value={answer4} onChange={(e) => inputHandler(e, setAnswer4)} className="form-control" aria-label="Text input with checkbox" />
                   </div>

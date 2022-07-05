@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import Quiz from "../pages/Quiz";
 
 
 
@@ -16,9 +17,10 @@ function App() {
       {!user && <Route path={routes.register.url} element={routes.register.component} />}
       {user && <>
         <Route path="/" element={routes.main.component} />
-        <Route path={routes.quizes.url} element={routes.quizes.component} />
+        <Route path={`${routes.quizes.url}/*`} element={routes.quizes.component} >
+          <Route path={":id"} element={<Quiz />} />
+        </Route>
         <Route path={routes.constructor.url} element={routes.constructor.component} />
-        <Route path={routes.quiz.url} element={routes.quiz.component} />
       </>}
       <Route path="*" element={<Navigate to={user ? "/" : routes.register.url} />} />
     </Routes>
