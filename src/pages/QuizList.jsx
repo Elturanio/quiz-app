@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 import { collection, doc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import "../styles/Loading.css"
 
 const QuizList = () => {
 
@@ -23,11 +24,14 @@ const QuizList = () => {
    }, [])
 
    console.log(data)
+
    const dataFor = data
+   const fragment = data.length ? <div className="quizlist-component">
+      {dataFor.map((quiz) => <QuizCard data={quiz} key={quiz.title} />)}
+   </div> : <div className="loading-component"><h1>Loading...</h1></div>
+
    return (
-      <div className="quizlist-component">
-         {dataFor.map((quiz) => <QuizCard data={quiz} key={quiz.title} />)}
-      </div>
+      fragment
    )
 }
 
