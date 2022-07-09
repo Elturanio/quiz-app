@@ -21,6 +21,7 @@ function App() {
           <Route path={":id"} element={<Quiz />} />
         </Route>
         <Route path={routes.constructor.url} element={routes.constructor.component} />
+        <Route path={`${routes.quiz.url}/:titleId`} element={routes.quiz.component} />
       </>}
       <Route path="*" element={<Navigate to={user ? "/" : routes.register.url} />} />
     </Routes>

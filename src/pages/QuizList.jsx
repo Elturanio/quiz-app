@@ -2,7 +2,7 @@ import "../styles/QuizList.css"
 import QuizCard from "../components/QuizCard"
 import { useEffect, useState } from "react"
 
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import "../styles/Loading.css"
 
@@ -16,14 +16,11 @@ const QuizList = () => {
          const querySnapshot = await getDocs(collection(db, "quiz-collection"));
          querySnapshot.forEach((doc) => {
             setData((state) => [...state, doc.data()])
-            console.log(doc.id, " => ", doc.data());
          });
 
       }
       getCollection()
    }, [])
-
-   console.log(data)
 
    const dataFor = data
    const fragment = data.length ? <div className="quizlist-component">

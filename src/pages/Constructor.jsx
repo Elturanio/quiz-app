@@ -42,7 +42,7 @@ const Constructor = () => {
          const data = {
             title,
             question,
-            answers: [{ answer1, box1 }, { answer2, box2 }, { answer3, box3 }, { answer4, box4 }]
+            answers: [{ answer: answer1, box: box1 }, { answer: answer2, box: box2 }, { answer: answer3, box: box3 }, { answer: answer4, box: box4 }]
          }
          const path = doc(db, `quiz-collection/${data.title}`)
          setDoc(path, data)
